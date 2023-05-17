@@ -117,6 +117,12 @@ function findAndPatch(m, patterns, thumb, fallback) {
                     console.log('[+] ssl_verify_peer_cert found at offset: 0x' + (address - m.base).toString(16));
                     TLSValidationDisabled = true;
                     hook_ssl_verify_peer_cert(address.add(thumb));
+                },
+                onComplete: function(){
+                    
+                },
+                onError: function(reason){
+
                 }
             });
         });
